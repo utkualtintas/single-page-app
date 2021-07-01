@@ -1,18 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:id="@+id/top_images_group"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        >
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:padding="8dp"
+            android:src="@drawable/android"
+            android:id="@+id/android_logo"
+            android:background="@color/black"
+            android:layout_weight="1"
+            />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:src="@drawable/main_photo"
+            android:scaleType="centerCrop"
+            android:id="@+id/android_photo"
+            android:layout_weight="3"
+            />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/info_group"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/user"
+            android:layout_alignBottom="@id/creator_name"
+            android:layout_marginLeft="30dp"
+            android:id="@+id/user_logo"/>
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignLeft="@id/user_logo"
+            android:src="@drawable/school"
+            android:layout_alignBottom="@id/school_name"/>
+
+        <TextView
+            android:id="@+id/creator_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="90dp"
+            android:text="Utku Altıntaş"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/creator_name"
+            android:layout_marginLeft="90dp"
+            android:layout_marginTop="10dp"
+            android:text="Koç Üniversitesi"
+            android:id="@+id/school_name"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/school_name"
+            android:layout_marginTop="50dp"
+            android:layout_alignLeft="@id/user_logo"
+            android:id="@+id/explanation_text"
+            android:text="This is the project I developed after completing Google's android user interface course"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="center"
+            android:src="@drawable/ist"
+            android:layout_below="@id/explanation_text"
+            android:layout_marginTop="50dp"
+
+            android:layout_marginBottom="20dp"/>
+
+    </RelativeLayout>
+
+
+</LinearLayout>
